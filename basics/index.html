@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>Project one</title>
+    </head>
+    <body>
+        <div id="app">  
+            <p>{{greetings}}</p>         
+            <p>Is it True? {{ isTrue ? 'Yes':'No'}}</p>
+            <p>{{array[1]}}</p>
+            <p>{{obj.car}}</p>
+        </div>
+    </body>
+    <script>
+        const { createApp } = Vue;
+        createApp({
+            setup(){
+                const greetings = 'Hello World!!! Today is ' + new Date().toLocaleString();
+                const isTrue = false;
+                const array = ['Frank', 'James']
+                const obj = {car: 'Ferrari'}
+
+                return {
+                    greetings,
+                    isTrue,
+                    array,
+                    obj
+                    
+                }
+            }
+        }).mount('#app')
+
+    </script>
+    
+</html>
